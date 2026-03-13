@@ -11,7 +11,11 @@ try
 {
     inven.AddItem("활");
 }
-catch (Exception ex)
+catch (ItemNotFoundException ex)
+{
+    Console.WriteLine($"[인벤토리 오류] {ex.Message}");
+}
+catch (InventoryFullException ex)
 {
     Console.WriteLine($"[인벤토리 오류] {ex.Message}");
 }
@@ -25,7 +29,11 @@ try
 {
     inven.RemoveItem("도끼");
 }
-catch (Exception ex)
+catch (ItemNotFoundException ex)
+{
+    Console.WriteLine($"[인벤토리 오류] {ex.Message}");
+}
+catch (InventoryFullException ex)
 {
     Console.WriteLine($"[인벤토리 오류] {ex.Message}");
 }
